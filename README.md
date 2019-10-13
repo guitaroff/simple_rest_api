@@ -1,24 +1,129 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Verticals
 
-Things you may want to cover:
+#### Index:
 
-* Ruby version
+```console
+GET http://localhost:3000/verticals
+```
 
-* System dependencies
+#### Show:
 
-* Configuration
+```console
+GET http://localhost:3000/verticals/10
+```
 
-* Database creation
+#### Create:
 
-* Database initialization
+```console
+POST http://localhost:3000/verticals
+{
+  "vertical": {
+    "name": "Music"
+  }
+}
+```
+#### Update:
 
-* How to run the test suite
+```console
+PATCH http://localhost:3000/verticals/10
+{
+  "vertical": {
+    "name": "Business"
+  }
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Destroy:
 
-* Deployment instructions
+```console
+DELETE http://localhost:3000/verticals/10
+```
 
-* ...
+
+### Categories
+
+#### Index:
+
+```console
+GET http://0.0.0.0:3000/verticals/10/categories
+```
+
+#### Show:
+
+```console
+GET http://0.0.0.0:3000/verticals/10/categories/17
+```
+
+#### Create:
+
+```console
+POST http://0.0.0.0:3000/verticals/10/categories
+{
+  "category": {
+    "name": "Classic Music",
+    "state": "active"
+  }
+}
+```
+#### Update:
+
+```console
+PATCH http://localhost:3000/verticals/10/categories/17
+{
+  "category": {
+    "name": "Pop Music"
+  }
+}
+```
+
+#### Destroy:
+
+```console
+DELETE http://localhost:3000/verticals/10/categories/17
+```
+
+
+### Courses
+
+#### Index:
+
+```console
+GET http://0.0.0.0:3000/categories/17/courses
+```
+
+#### Show:
+
+```console
+GET http://0.0.0.0:3000/categories/17/courses/1
+```
+
+#### Create:
+
+```console
+POST http://0.0.0.0:3000/categories/17/courses
+{
+  "course": {
+    "name": "Learn the Cello",
+    "author": "Rostropovich",
+    "state": "active"
+  }
+}
+```
+#### Update:
+
+```console
+PATCH http://0.0.0.0:3000/categories/17/courses/1
+{
+  "course": {
+    "name": "Learn the Violin"
+  }
+}
+```
+
+#### Destroy:
+
+```console
+DELETE http://0.0.0.0:3000/categories/17/courses/1
+```
