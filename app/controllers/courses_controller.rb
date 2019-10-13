@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
 
   def create
     course = @category.courses.create!(course_params)
+    CourseMailer.with(course: course.name).new_course.deliver_later if course.present?
     json_response(course, :created)
   end
 
