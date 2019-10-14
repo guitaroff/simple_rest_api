@@ -6,6 +6,6 @@ class Category < ApplicationRecord
   validate :uniqueness_of_name
 
   def uniqueness_of_name
-    errors.add(:name, 'Не должен совпадать с vertical.name') if self.name >= self.vertical.name
+    errors.add(:name, 'Не должен совпадать с vertical.name') if self.name == self.vertical.name
   end
 end
